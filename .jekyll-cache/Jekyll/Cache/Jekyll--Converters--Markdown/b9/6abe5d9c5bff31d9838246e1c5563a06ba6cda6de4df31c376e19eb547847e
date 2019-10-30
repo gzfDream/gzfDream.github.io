@@ -1,0 +1,481 @@
+I"�l<ul id="markdown-toc">
+  <li><a href="#关于这个简洁明快的博客主题-" id="markdown-toc-关于这个简洁明快的博客主题-">关于这个简洁明快的博客主题 🤘🤘🤘</a>    <ul>
+      <li><a href="#目录" id="markdown-toc-目录">目录</a></li>
+      <li><a href="#预览图" id="markdown-toc-预览图">预览图</a></li>
+      <li><a href="#各部分详情" id="markdown-toc-各部分详情">各部分详情</a>        <ul>
+          <li><a href="#主页-home" id="markdown-toc-主页-home">主页 Home</a></li>
+          <li><a href="#归档页-archives" id="markdown-toc-归档页-archives">归档页 Archives</a></li>
+          <li><a href="#分类页-categories" id="markdown-toc-分类页-categories">分类页 Categories</a></li>
+          <li><a href="#标签页-tags" id="markdown-toc-标签页-tags">标签页 Tags</a></li>
+          <li><a href="#收藏页-collections" id="markdown-toc-收藏页-collections">收藏页 Collections</a></li>
+          <li><a href="#展示页-demo" id="markdown-toc-展示页-demo">展示页 Demo</a></li>
+          <li><a href="#关于页-about" id="markdown-toc-关于页-about">关于页 About</a></li>
+          <li><a href="#评论" id="markdown-toc-评论">评论</a></li>
+          <li><a href="#目录-contents" id="markdown-toc-目录-contents">目录 Contents</a></li>
+          <li><a href="#代码高亮" id="markdown-toc-代码高亮">代码高亮</a></li>
+          <li><a href="#灯泡效果" id="markdown-toc-灯泡效果">灯泡效果</a></li>
+          <li><a href="#移动端适配" id="markdown-toc-移动端适配">移动端适配</a></li>
+          <li><a href="#footer" id="markdown-toc-footer">Footer</a></li>
+          <li><a href="#统计" id="markdown-toc-统计">统计</a></li>
+        </ul>
+      </li>
+      <li><a href="#博客主题使用方法" id="markdown-toc-博客主题使用方法">博客主题使用方法</a>        <ul>
+          <li><a href="#1-安装-ruby-和-jekyll-环境" id="markdown-toc-1-安装-ruby-和-jekyll-环境">1. 安装 ruby 和 jekyll 环境</a></li>
+          <li><a href="#2-复制博客主题代码" id="markdown-toc-2-复制博客主题代码">2. 复制博客主题代码</a></li>
+          <li><a href="#3-修改参数" id="markdown-toc-3-修改参数">3. 修改参数</a>            <ul>
+              <li><a href="#基本信息" id="markdown-toc-基本信息">基本信息</a></li>
+              <li><a href="#链接信息" id="markdown-toc-链接信息">链接信息</a></li>
+              <li><a href="#评论信息" id="markdown-toc-评论信息">评论信息</a></li>
+              <li><a href="#统计信息" id="markdown-toc-统计信息">统计信息</a></li>
+            </ul>
+          </li>
+          <li><a href="#4-写文章" id="markdown-toc-4-写文章">4. 写文章</a></li>
+          <li><a href="#5-本地运行" id="markdown-toc-5-本地运行">5. 本地运行</a></li>
+          <li><a href="#6-发布到-github" id="markdown-toc-6-发布到-github">6. 发布到 GitHub</a></li>
+        </ul>
+      </li>
+      <li><a href="#捐助-donate" id="markdown-toc-捐助-donate">捐助 donate</a></li>
+      <li><a href="#update-log" id="markdown-toc-update-log">Update Log</a>        <ul>
+          <li><a href="#2017228" id="markdown-toc-2017228">2017.2.28</a></li>
+          <li><a href="#2016620" id="markdown-toc-2016620">2016.6.20</a></li>
+          <li><a href="#2016511-v201" id="markdown-toc-2016511-v201">2016.5.11 v2.0.1</a></li>
+          <li><a href="#2016427-v200" id="markdown-toc-2016427-v200">2016.4.27 v2.0.0</a></li>
+        </ul>
+      </li>
+      <li><a href="#license" id="markdown-toc-license">License</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>以下内容复制于<a href="https://github.com/xudailong/xudailong.github.io">该模板</a> \n
+关于如何使用Github搭建个人博客，请参考原作者<a href="https://blog.csdn.net/xudailong_blog/article/details/78762262">博客</a></p>
+
+<h1 id="关于这个简洁明快的博客主题-">关于这个简洁明快的博客主题 🤘🤘🤘</h1>
+
+<p><a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/stargazers"><img src="https://img.shields.io/github/stars/Gaohaoyang/gaohaoyang.github.io.svg" alt="GitHub stars" /></a>
+<a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/network"><img src="https://img.shields.io/github/forks/Gaohaoyang/gaohaoyang.github.io.svg" alt="GitHub forks" /></a>
+<a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/issues"><img src="https://img.shields.io/github/issues/Gaohaoyang/gaohaoyang.github.io.svg" alt="GitHub issues" /></a>
+<a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/releases"><img src="https://img.shields.io/github/release/Gaohaoyang/gaohaoyang.github.io.svg" alt="GitHub release" /></a>
+<a href="https://raw.githubusercontent.com/Gaohaoyang/gaohaoyang.github.io/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license" /></a></p>
+
+<p>随着 jekyll 的版本升级，同时我也想重构我的旧版博客主题，因此在这个月对博客进行了重构加改版，这个仓库存放我的新博客，并且我也会一直使用这个主题。目前基本改版完成，后续可能还会有些细节上的修补。</p>
+
+<p><strong>博客访问地址：<a href="http://gaohaoyang.github.io/">http://gaohaoyang.github.io/</a></strong>。若您喜欢这个新的博客主题，请给我个star以示鼓励吧，欢迎大家使用。</p>
+
+<h2 id="目录">目录</h2>
+
+<ul>
+  <li><a href="#预览图">预览图</a></li>
+  <li><a href="#各部分详情">各部分详情</a>
+    <ul>
+      <li><a href="#主页-home">主页 Home</a></li>
+      <li><a href="#归档页-archives">归档页 Archives</a></li>
+      <li><a href="#分类页-categories">分类页 Categories</a></li>
+      <li><a href="#标签页-tags">标签页 Tags</a></li>
+      <li><a href="#收藏页-collections">收藏页 Collections</a></li>
+      <li><a href="#展示页-demo">展示页 Demo</a></li>
+      <li><a href="#关于页-about">关于页 About</a></li>
+      <li><a href="#评论">评论</a></li>
+      <li><a href="#目录-contents">目录 Contents</a></li>
+      <li><a href="#代码高亮">代码高亮</a></li>
+      <li><a href="#灯泡效果">灯泡效果</a></li>
+      <li><a href="#移动端适配">移动端适配</a></li>
+      <li><a href="#footer">Footer</a></li>
+      <li><a href="#统计">统计</a></li>
+    </ul>
+  </li>
+  <li><a href="#博客主题使用方法">博客主题使用方法</a>
+    <ul>
+      <li><a href="#1-安装-ruby-和-jekyll-环境">1. 安装 ruby 和 jekyll 环境</a></li>
+      <li><a href="#2-复制博客主题代码">2. 复制博客主题代码</a></li>
+      <li><a href="#3-修改参数">3. 修改参数</a>
+        <ul>
+          <li><a href="#基本信息">基本信息</a></li>
+          <li><a href="#链接信息">链接信息</a></li>
+          <li><a href="#评论信息">评论信息</a></li>
+          <li><a href="#统计信息">统计信息</a></li>
+        </ul>
+      </li>
+      <li><a href="#4-写文章">4. 写文章</a></li>
+      <li><a href="#5-本地运行">5. 本地运行</a></li>
+      <li><a href="#6-发布到-github">6. 发布到 GitHub</a></li>
+    </ul>
+  </li>
+  <li><a href="#捐助-donate">捐助 donate</a></li>
+  <li><a href="#update-log">Update Log</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<h2 id="预览图">预览图</h2>
+
+<p>先上预览图：</p>
+
+<p>主页
+<img src="http://ww3.sinaimg.cn/large/7011d6cfjw1f3bdli86awj211k0oyqen.jpg" alt="index" /></p>
+
+<p>文章页
+<img src="http://ww4.sinaimg.cn/large/7011d6cfjw1f3bdmzb9v6j210p0j7gwn.jpg" alt="post" /></p>
+
+<h2 id="各部分详情">各部分详情</h2>
+
+<h3 id="主页-home">主页 Home</h3>
+
+<p>主页默认展示5篇文章的摘要部分，用户点击标题或阅读全文后进入文章页。右侧为近期文章、分类和标签3块区域，用户可以继续在这部分添加区域，只需修改<code class="highlighter-rouge">index.html</code>即可。</p>
+
+<h3 id="归档页-archives">归档页 Archives</h3>
+
+<p>按照年份归档文章。</p>
+
+<h3 id="分类页-categories">分类页 Categories</h3>
+
+<p>按照文章的分类，显示文章。</p>
+
+<h3 id="标签页-tags">标签页 Tags</h3>
+
+<p>按照文章的标签显示文章。</p>
+
+<h3 id="收藏页-collections">收藏页 Collections</h3>
+
+<p>本页是用<code class="highlighter-rouge">markdown</code>写的，用户可以收藏自己喜欢的文章链接。</p>
+
+<h3 id="展示页-demo">展示页 Demo</h3>
+
+<p>使用 <a href="http://masonry.desandro.com/">Masonry</a> 重写了瀑布流布局，响应式布局，更好的交互体验。</p>
+
+<h3 id="关于页-about">关于页 About</h3>
+
+<p>对个人和对本站的介绍，使用<code class="highlighter-rouge">markdown</code>写的。</p>
+
+<h3 id="评论">评论</h3>
+
+<p>支持 <a href="http://duoshuo.com/">多说评论</a> 和 <a href="https://disqus.com/">disqus</a> 评论。</p>
+
+<p>只需要在 <code class="highlighter-rouge">_config.yml</code> 修改相应的配置<code class="highlighter-rouge">short_name</code>即可，如下：</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># comments</span>
+<span class="c1"># two ways to comment, only choose one, and use your own short name</span>
+<span class="c1"># 两种评论插件，选一个就好了，使用自己的 short_name</span>
+<span class="na">duoshuo_shortname</span><span class="pi">:</span> <span class="c1">#xxx</span>
+<span class="na">disqus_shortname</span><span class="pi">:</span> <span class="s">xxx</span>
+</code></pre></div></div>
+
+<h3 id="目录-contents">目录 Contents</h3>
+
+<p>页面滚动时目录固定在屏幕右侧，若目录高度超出屏幕高度，目录产生滚动条。</p>
+
+<h3 id="代码高亮">代码高亮</h3>
+
+<p>随着 jekyll 的升级，目前代码高亮使用风格与 github 上的 markdown 写法一致。</p>
+
+<h3 id="灯泡效果">灯泡效果</h3>
+
+<p><img src="http://ww3.sinaimg.cn/large/7011d6cfjw1f3be6y4vp3j209i02rweg.jpg" alt="light" /></p>
+
+<p>可以看到导航按钮高亮时，下面的阴影效果，我把这个称为灯泡效果。</p>
+
+<h3 id="移动端适配">移动端适配</h3>
+
+<p>完美适配移动端。</p>
+
+<p><img src="http://ww4.sinaimg.cn/large/7011d6cfjw1f3bebnzxkpj20ah0fzgp4.jpg" alt="mobile" /></p>
+
+<h3 id="footer">Footer</h3>
+
+<p><strong>欢迎使用这个主题，使用时请保留 footer 上的模板主题来源。</strong> Theme designed by <a href="https://github.com/gaohaoyang">HyG</a>.
+<img src="http://ww3.sinaimg.cn/large/7011d6cfjw1f3bepd8002j20hl02ct95.jpg" alt="footer" /></p>
+
+<h3 id="统计">统计</h3>
+
+<p>博客支持百度统计和 Google Analytics，只需在<code class="highlighter-rouge">_config.yml</code>中配置响应的id即可，代码如下。</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># statistic analysis 统计代码</span>
+<span class="c1"># 百度统计 id，将统计代码替换为自己的百度统计id，即</span>
+<span class="c1"># hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";</span>
+<span class="c1"># xxxxx字符串</span>
+<span class="na">baidu_tongji_id</span><span class="pi">:</span> <span class="s">xxxxxxxxxxxx</span>
+<span class="na">google_analytics_id</span><span class="pi">:</span> <span class="s">UA-xxxxxxxx</span> <span class="c1"># google 分析追踪id</span>
+</code></pre></div></div>
+
+<h2 id="博客主题使用方法">博客主题使用方法</h2>
+
+<p>欢迎使用这个主题，以下简单说一下使用方法。</p>
+
+<h3 id="1-安装-ruby-和-jekyll-环境">1. 安装 ruby 和 jekyll 环境</h3>
+
+<p>这一步和第5步主要是为了让博客系统在本地跑起来，如果不想在本地运行，可以无视这两步，但我还是强烈建议试着先在本地跑起来，没有什么问题后再推送的 GitHub 上。</p>
+
+<p>Windows 用户可以直接使用 <a href="http://rubyinstaller.org/">RubyInstaller</a> 安装 ruby 环境。后续的操作中可能还会提示安装 DevKit，根据提示操作即可。</p>
+
+<p>建议使用 <a href="https://gems.ruby-china.org/">RubyGems 镜像- Ruby China</a> 安装 jekyll。</p>
+
+<p>安装 jekyll 命令如下</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll
+</code></pre></div></div>
+
+<p>详情可以查看 jekyll 官网。<a href="https://jekyllrb.com/">https://jekyllrb.com/</a> 或 中文翻译版 jekyll 官网<a href="http://jekyllcn.com/">http://jekyllcn.com/</a> （中文文档翻译落后于英文官网，有兴趣有时间的小伙伴可以参与翻译，为开源世界贡献一份力哦~）</p>
+
+<p>在 mac OS X El Capitan 系统下安装可能会出现问题，解决方案详情见 jekyll 官网: <a href="https://jekyllrb.com/docs/troubleshooting/#jekyll-amp-mac-os-x-1011"> https://jekyllrb.com/docs/troubleshooting/#jekyll-amp-mac-os-x-1011</a></p>
+
+<p>对 jekyll 本身感兴趣的同学可以看看 jekyll 源码: <a href="https://github.com/jekyll/jekyll">https://github.com/jekyll/jekyll</a></p>
+
+<p><img src="http://jekyllcn.com/img/logo-2x.png" alt="jekyll logo" /></p>
+
+<h3 id="2-复制博客主题代码">2. 复制博客主题代码</h3>
+
+<p>可以直接 clone 、下载 或 fork 这个仓库的代码即可</p>
+
+<h3 id="3-修改参数">3. 修改参数</h3>
+
+<p>主要修改 <code class="highlighter-rouge">_config.yml</code> 中的参数和自己的网站小图<code class="highlighter-rouge">favicon.ico</code></p>
+
+<p><code class="highlighter-rouge">_config.yml</code>文件中</p>
+
+<h4 id="基本信息">基本信息</h4>
+
+<p>主要用于网站头部header。</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Site settings</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">HyG</span>
+<span class="na">brief-intro</span><span class="pi">:</span> <span class="s">Front-end Dev Engineer</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># the subpath of your site, e.g. /blog</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://gaohaoyang.github.io"</span> <span class="c1"># the base hostname &amp; protocol for your site</span>
+</code></pre></div></div>
+
+<h4 id="链接信息">链接信息</h4>
+
+<p>主要用于网站底部footer。</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># other links</span>
+<span class="na">twitter_username</span><span class="pi">:</span> <span class="s">gaohaoyang126</span>
+<span class="na">facebook_username</span><span class="pi">:</span> <span class="s">gaohaoyang.water</span>
+<span class="na">github_username</span><span class="pi">:</span>  <span class="s">Gaohaoyang</span>
+<span class="na">email</span><span class="pi">:</span> <span class="s">gaohaoyang126@126.com</span>
+<span class="na">weibo_username</span><span class="pi">:</span> <span class="s">3115521wh</span>
+<span class="na">zhihu_username</span><span class="pi">:</span> <span class="s">gaohaoyang</span>
+<span class="na">linkedIn_username</span><span class="pi">:</span> <span class="s">gaohaoyang</span>
+<span class="na">dribbble_username</span><span class="pi">:</span>
+
+<span class="na">description_footer</span><span class="pi">:</span> <span class="s">本站记录我前端之旅的沿途风景！</span>
+</code></pre></div></div>
+
+<h4 id="评论信息">评论信息</h4>
+
+<p>获取<code class="highlighter-rouge">short_name</code>的方法：</p>
+
+<p>访问 https://disqus.com/ 或 http://duoshuo.com/ 根据提示操作即可。</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># comments</span>
+<span class="c1"># two ways to comment, only choose one, and use your own short name</span>
+<span class="c1"># 两种评论插件，选一个就好了，使用自己的 short_name</span>
+<span class="na">duoshuo_shortname</span><span class="pi">:</span> <span class="c1">#hygblog</span>
+<span class="na">disqus_shortname</span><span class="pi">:</span> <span class="s">gaohaoyang</span>
+</code></pre></div></div>
+
+<p>运行成功后，可以在 disqus 或 多说 的后台管理页看到相关信息。</p>
+
+<h4 id="统计信息">统计信息</h4>
+
+<p>获取 百度统计id 或 Google Analytics id 的方法：</p>
+
+<p>访问 http://tongji.baidu.com/ 或 https://www.google.com/analytics/ 根据提示操作即可。当然，如果不想添加统计信息，这两个参数可以不填。</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># statistic analysis 统计代码</span>
+<span class="c1"># 百度统计 id，将统计代码替换为自己的百度统计id，即</span>
+<span class="c1"># hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";</span>
+<span class="c1"># xxxxx字符串</span>
+<span class="na">baidu_tongji_id</span><span class="pi">:</span> <span class="s">cf8506e0ef223e57ff6239944e5d46a4</span>
+<span class="na">google_analytics_id</span><span class="pi">:</span> <span class="s">UA-72449510-4</span> <span class="c1"># google 分析追踪id</span>
+</code></pre></div></div>
+
+<p>成功后，进入自己的百度统计或 Google Analytics 后台管理，即可看到网站的访问量、访客等相关信息。</p>
+
+<h3 id="4-写文章">4. 写文章</h3>
+
+<p><code class="highlighter-rouge">_posts</code>目录下存放文章信息，文章头部注明 layout(布局)、title、date、categories、tags、author(可选)、mathjax(可选，点击<a href="https://www.mathjax.org/">这里</a>查看更多关于<code class="highlighter-rouge">Mathjax</code>)，如下：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: post
+title:  "对这个 jekyll 博客主题的改版和重构"
+date:   2016-03-12 11:40:18 +0800
+categories: jekyll
+tags: jekyll 端口 markdown Foxit RubyGems HTML CSS
+author: Haoyang Gao
+mathjax: true
+---
+</code></pre></div></div>
+
+<p>下面这两行代码为产生目录时使用</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* content
+{:toc}
+</code></pre></div></div>
+
+<p>文章中存在的4次换行为摘要分割符，换行前的内容会以摘要的形式显示在主页Home上，进入文章页不影响。</p>
+
+<p>换行符的设置见配置文件<code class="highlighter-rouge">_config.yml</code>的 excerpt，如下：</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># excerpt</span>
+<span class="na">excerpt_separator</span><span class="pi">:</span> <span class="s2">"</span><span class="se">\n\n\n\n</span><span class="s">"</span>
+</code></pre></div></div>
+
+<p>使用 markdown 语法写文章。</p>
+
+<p>代码风格与 GitHub 上 README 或 issue 中的一致。使用3个```的方式。</p>
+
+<h3 id="5-本地运行">5. 本地运行</h3>
+
+<p>本地执行</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll s
+</code></pre></div></div>
+
+<p>显示</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Configuration file: E:/GitWorkSpace/blog/_config.yml
+            Source: E:/GitWorkSpace/blog
+       Destination: E:/GitWorkSpace/blog/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating...
+                    done in 6.33 seconds.
+  Please add the following to your Gemfile to avoid polling for changes:
+    gem 'wdm', '&gt;= 0.1.0' if Gem.win_platform?
+ Auto-regeneration: enabled for 'E:/GitWorkSpace/blog'
+Configuration file: E:/GitWorkSpace/blog/_config.yml
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+</code></pre></div></div>
+
+<p>在本地访问 localhost:4000 即可看到博客主页。</p>
+
+<p>若安装了 Foxit 福昕pdf阅读器可能会占用4000端口，关闭 Foxit服务 或切换 jekyll 端口即可解决。详情见文章：<a href="http://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/">对这个 jekyll 博客主题的改版和重构</a></p>
+
+<p>若正在使用全局代理，可能会报错502，关闭全局代理即可。</p>
+
+<h3 id="6-发布到-github">6. 发布到 GitHub</h3>
+
+<p>没什么问题，推送到自己的博客仓库即可。</p>
+
+<h2 id="捐助-donate">捐助 donate</h2>
+
+<p>您也可以捐助我喝杯咖啡！感谢！</p>
+
+<!-- PayPal
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="Q44JFSYQXBFL2">
+<input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_cc_147x47.png" border="0" name="submit" alt="PayPal——最安全便捷的在线支付方式！">
+<img alt="" border="0" src="https://www.paypalobjects.com/zh_XC/i/scr/pixel.gif" width="1" height="1">
+</form><br>      -->
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">支付宝</th>
+      <th style="text-align: center">微信支付</th>
+      <th style="text-align: center">PayPal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="http://ww2.sinaimg.cn/large/7011d6cfjw1f3bk8ikzoij20740743z5.jpg" alt="alipay" /></td>
+      <td style="text-align: center"><img src="http://ww2.sinaimg.cn/large/7011d6cfjw1f3bkdw3bslj206z06q3z6.jpg" alt="wechat" /></td>
+      <td style="text-align: center"><a href="https://www.paypal.me/gaohaoyang"><img src="https://www.paypalobjects.com/webstatic/paypalme/images/pp_logo_small.png" alt="PayPal" /><br />Donate via PayPal </a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>感谢捐赠的小伙伴！！！</p>
+
+<ul>
+  <li>2017.05.25 收到 微信用户 ¥1.00</li>
+  <li>2017.05.19 收到 风之筝 ¥6.66</li>
+  <li>2017.05.16 收到 张驰 ¥6.00</li>
+  <li>2017.05.03 收到 希成 ¥6.66</li>
+  <li>2017.04.24 收到 deezer ¥10.00</li>
+  <li>2017.04.13 收到 Abraham Xiao ¥30.00</li>
+  <li>2017.04.11 收到 微信用户 ¥4.00</li>
+  <li>2017.04.01 收到 Elvin Zeng ¥6.66</li>
+  <li>2017.03.13 收到 微信用户 ¥6.66</li>
+  <li>2017.03.04 收到 史莱姆 ¥9.90</li>
+  <li>2017.03.02 收到 梦想小熊 ¥6.66</li>
+  <li>2017.02.27 收到 夏友杰 ¥6.66</li>
+  <li>2017.02.26 收到 兰缘小妖 ¥10.00</li>
+  <li>2017.02.25 收到 微信用户 ¥6.66</li>
+  <li>2017.02.22 收到 微信用户 ¥6.66</li>
+  <li>2017.02.15 收到 微信用户 ¥10.00</li>
+  <li>2017.02.06 收到 Light ¥10.24</li>
+  <li>2017.01.15 收到 微信用户 ¥6.66</li>
+  <li>2016.12.17 收到 HitNoah ¥12.00</li>
+  <li>2016.12.09 收到 情融 ¥6.60</li>
+  <li>2016.11.16 收到 微信用户 ¥6.66</li>
+  <li>2016.11.16 收到 微信用户 ¥1.00</li>
+  <li>2016.10.24 收到 奇峰 ¥6.66</li>
+  <li>2016.10.21 收到 旭廷 ¥10.00</li>
+  <li>2016.09.24 收到 鑫 ¥6.66</li>
+  <li>2016.08.25 收到 Erlend Aakre $2.50</li>
+  <li>2016.08.10 收到 微信用户 ¥4.40</li>
+  <li>2016.07.25 收到 邓炳初 ¥6.66</li>
+  <li>2016.07.11 收到 彦风 ¥6.66</li>
+  <li>2016.07.07 收到 Klci ¥2.50</li>
+  <li>2016.05.08 收到 1057 ¥10.57</li>
+  <li>2016.05.07 收到 吴林 ¥2</li>
+  <li>2016.04.29 收到 北归 ¥10</li>
+  <li>2016.04.28 收到 魏楚阳_Brian ¥2</li>
+  <li>2016.04.28 收到 薛彬 ¥8.8</li>
+</ul>
+
+<h2 id="update-log">Update Log</h2>
+
+<h3 id="2017228">2017.2.28</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">[^]</code> 修复目录滚动 bug <a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/22">#22</a>, <a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/48">#48</a></li>
+</ul>
+
+<h3 id="2016620">2016.6.20</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">[+]</code> 在文章页中添加上一篇和下一篇文章链接。</li>
+  <li><code class="highlighter-rouge">[^]</code> 修改 font-family 顺序，避免微软雅黑将单引号解析为全角。</li>
+  <li><code class="highlighter-rouge">[^]</code> 修复标签云算法中被除数为零的 bug。<a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/26">#26</a>, <a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/28">#28</a>, <a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/issues/30">#30</a></li>
+</ul>
+
+<h3 id="2016511-v201">2016.5.11 v2.0.1</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">[^]</code> 优化代码，将页面中的大段评论相关代码抽离出来，放入<code class="highlighter-rouge">comments.html</code></li>
+  <li><code class="highlighter-rouge">[+]</code> 添加百度统计和Google分析代码，在<code class="highlighter-rouge">_config.yml</code>中配置相关参数即可</li>
+  <li><code class="highlighter-rouge">[+]</code> 更新文档，添加博客主题使用方法，便于上手</li>
+  <li><code class="highlighter-rouge">[+]</code> 添加了<code class="highlighter-rouge">favicon.ico</code></li>
+  <li><code class="highlighter-rouge">[^]</code> 修复 bug，目录太长时，滚动到最底部时隐藏到footer下面。修复后长目录在滚动到底部时使用<code class="highlighter-rouge">position:absolute</code></li>
+  <li><code class="highlighter-rouge">[^]</code> 修改目录区的滚动条样式（仅针对<code class="highlighter-rouge">webkit</code>内核浏览器）</li>
+  <li><code class="highlighter-rouge">[^]</code> 修改 demo 页中 disqus 评论区 a 标签的颜色 bug，修改 blockqoute 中 p 标签的 margin</li>
+  <li><code class="highlighter-rouge">[+]</code> 添加不蒜子计数功能，在footer上显示访问量</li>
+  <li><code class="highlighter-rouge">[+]</code> 添加回到顶部功能</li>
+</ul>
+
+<h3 id="2016427-v200">2016.4.27 v2.0.0</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">[^]</code> 基于 jekyll 3.1.2 重构了所有代码</li>
+  <li><code class="highlighter-rouge">[+]</code> 主页添加了摘要，在正文中使用4个换行符来分割，可在<code class="highlighter-rouge">_config.yml</code>中修改</li>
+  <li><code class="highlighter-rouge">[+]</code> 主页添加了近期文章、分类列表和标签云</li>
+  <li><code class="highlighter-rouge">[+]</code> 主页导航区做了视觉优化，阴影效果</li>
+  <li><code class="highlighter-rouge">[+]</code> 增加了归档、标签和分类页面</li>
+  <li><code class="highlighter-rouge">[+]</code> 增加了收藏页面</li>
+  <li><code class="highlighter-rouge">[+]</code> 评论插件可以选择 disqus 或 多说，直接在<code class="highlighter-rouge">_config.yml</code>中修改</li>
+  <li><code class="highlighter-rouge">[+]</code> 适配移动端</li>
+  <li><code class="highlighter-rouge">[+]</code> 页面滚动时，文章目录固定在右侧</li>
+  <li><code class="highlighter-rouge">[+]</code> 页面内容较少时，固定 footer 在页面底部</li>
+  <li><code class="highlighter-rouge">[^]</code> 使用 GitHub 风格的代码高亮写法，即```的写法，去除<code class="highlighter-rouge">highlight.js</code>代码高亮插件的使用</li>
+  <li><code class="highlighter-rouge">[^]</code> 使用 Masonry 重写了 Demo 页中的瀑布流布局，响应式交互体验更好</li>
+  <li><code class="highlighter-rouge">[-]</code> 去除了 jQuery 和 BootStrap，使得加载速度更快</li>
+</ul>
+
+<p>关于旧版博客，我不再维护，同时我把代码转移到了另一个仓库，见 <a href="https://github.com/Gaohaoyang/old-blog">Gaohaoyang/old-blog</a>。</p>
+
+<h2 id="license">License</h2>
+
+<p><a href="https://github.com/Gaohaoyang/gaohaoyang.github.io/blob/master/LICENSE.md">MIT License</a></p>
+:ET

@@ -1,0 +1,55 @@
+I"*<ul id="markdown-toc">
+  <li><a href="#关于我" id="markdown-toc-关于我">关于我</a></li>
+  <li><a href="#联系我" id="markdown-toc-联系我">联系我</a></li>
+  <li><a href="#关于本站" id="markdown-toc-关于本站">关于本站</a>    <ul>
+      <li><a href="#update-log" id="markdown-toc-update-log">Update Log</a></li>
+    </ul>
+  </li>
+  <li><a href="#友情链接" id="markdown-toc-友情链接">友情链接</a></li>
+  <li><a href="#comments" id="markdown-toc-comments">Comments</a></li>
+</ul>
+
+<h2 id="关于我">关于我</h2>
+
+<iframe src="" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameborder="0"></iframe>
+
+<h2 id="联系我">联系我</h2>
+
+<ul>
+  <li>GitHub：</li>
+  <li>email：</li>
+  <li><a href="">Weibo</a></li>
+  <li><a href="">知乎</a></li>
+  <li><a href="">Facebook</a></li>
+  <li><a href="">Twitter</a></li>
+</ul>
+
+<h2 id="关于本站">关于本站</h2>
+
+<h3 id="update-log">Update Log</h3>
+
+<h2 id="友情链接">友情链接</h2>
+
+<h2 id="comments">Comments</h2>
+
+<!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="http://localhost:4001/about/" data-title="About" data-url="http://localhost:4001/about/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    var duoshuoQuery = {
+        short_name: "gzfdream"
+    };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+<!-- 多说公共JS代码 end -->
+
+:ET
