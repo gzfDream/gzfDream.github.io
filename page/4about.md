@@ -11,8 +11,9 @@ type: page
 
 ## 关于我
 
-<iframe src="" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
-	山东大学渣硕
+<iframe src="https://githubbadge.appspot.com/gzfDream?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
+
+山东大学渣硕
 
 
 ## 联系我
