@@ -1,0 +1,164 @@
+I"C<ul id="markdown-toc">
+  <li><a href="#工具" id="markdown-toc-工具">工具</a></li>
+  <li><a href="#编程语言" id="markdown-toc-编程语言">编程语言</a></li>
+  <li><a href="#编辑器" id="markdown-toc-编辑器">编辑器</a>    <ul>
+      <li><a href="#atom-中常用插件" id="markdown-toc-atom-中常用插件">Atom 中常用插件</a></li>
+    </ul>
+  </li>
+  <li><a href="#gitbook-及其插件" id="markdown-toc-gitbook-及其插件">GitBook 及其插件</a></li>
+  <li><a href="#chrome-插件" id="markdown-toc-chrome-插件">Chrome 插件</a></li>
+  <li><a href="#other-blogs" id="markdown-toc-other-blogs">Other blogs</a></li>
+  <li><a href="#comments" id="markdown-toc-comments">Comments</a></li>
+</ul>
+
+<h2 id="工具">工具</h2>
+
+<h2 id="编程语言">编程语言</h2>
+
+<p>###</p>
+
+<h2 id="编辑器">编辑器</h2>
+
+<h3 id="atom-中常用插件">Atom 中常用插件</h3>
+
+<ul>
+  <li>auto-beautify</li>
+  <li>autoprefixer</li>
+  <li>block-comment</li>
+  <li>color-picker</li>
+  <li>docblockr</li>
+  <li>emmet</li>
+  <li>jquery-snippets</li>
+  <li>jshint</li>
+  <li>linter</li>
+  <li>linter-csslint</li>
+  <li>linter-htmlhint</li>
+  <li>minimap</li>
+  <li>minimap-git-diff</li>
+  <li>minimap-codeglance 滑过 minimap 显示代码</li>
+  <li>minimap-find-and-replace 在 minimap 中显示 <code class="highlighter-rouge">ctrl+D</code> 选中的内容</li>
+  <li>open-in-browser</li>
+  <li>uglify</li>
+  <li>active-power-mode</li>
+  <li>atom-terminal-panel</li>
+  <li>linter-scss-linter</li>
+  <li>atom-ternjs</li>
+  <li>file-icons 将图标变成彩色</li>
+  <li>autocomplete-paths 自动补充路径</li>
+  <li>symbols-tree-view A symbol treeview like taglist</li>
+</ul>
+
+<p>常用的主题：</p>
+
+<p>UI Theme: One Dark</p>
+
+<p>Syntax Theme: Atom Dark or One Dark</p>
+
+<h2 id="gitbook-及其插件">GitBook 及其插件</h2>
+
+<ul>
+  <li><a href="http://zhaoda.net/2015/11/09/gitbook-plugins/">Gitbook 的使用和常用插件 -赵达</a></li>
+  <li>
+    <p><a href="https://plugins.gitbook.com/plugin/expandable-chapters">gitbook-plugin-expandable-chapters</a></p>
+
+    <p>折叠左侧目录章节。</p>
+
+    <p><!-- ![](http://ww4.sinaimg.cn/large/7011d6cfjw1f08kmplbj1j20gn05l0tk.jpg) --></p>
+  </li>
+</ul>
+
+<h2 id="chrome-插件">Chrome 插件</h2>
+<ul>
+  <li>
+    <p><a href="https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc">Octotree</a></p>
+
+    <ul>
+      <li>Code tree for GitHub and GitLab</li>
+    </ul>
+  </li>
+  <li>
+    <p><a href="http://www.ituring.com.cn/minibook/950">Chrome扩展及应用开发 -图灵电子书</a></p>
+  </li>
+  <li><a href="https://www.zhihu.com/question/23228162#answer-28057391">有哪些鲜为人知却非常有意思、好用的 Chrome 扩展？ -知乎</a></li>
+  <li>
+    <p><a href="https://chrome.google.com/webstore/detail/dribbble-new-tab/hmhjbefkpednjogghoibpejdmemkinbn">Dribbble New Tab</a></p>
+
+    <p>新建 tab 时，显示 dribbble 上的精选作品。</p>
+  </li>
+</ul>
+
+<h2 id="other-blogs">Other blogs</h2>
+
+<ul>
+  <li>
+    <p><a href="http://www.xiaoa.name/">COLORFUL xiaoa</a></p>
+  </li>
+  <li>
+    <p><a href="http://pinkyjie.com/">进击的马斯特 http://pinkyjie.com/</a></p>
+
+    <p>马斯特，87年生人，爱溜冰的码农。技术： Javascript、Python、Mac、iOS</p>
+  </li>
+  <li>
+    <p><a href="https://imququ.com/">Jerry Qu</a></p>
+
+    <p>JerryQu，奇虎 360，前端开发，前百度前端。</p>
+  </li>
+  <li>
+    <p><a href="https://mazhuang.org/">码志 https://mazhuang.org/</a></p>
+
+    <p>我是马壮，码而生，码而立。就职sogou。</p>
+  </li>
+  <li>
+    <p><a href="http://www.barretlee.com/">小胡子哥 http://www.barretlee.com/</a></p>
+
+    <p>李靖，阿里巴巴。</p>
+  </li>
+  <li>
+    <p><a href="http://blog.xcatliu.com/">Xcat Liu http://blog.xcatliu.com/</a></p>
+
+    <p>Microsoft Software Engineer II, Meituan Senior Front-End Engineer</p>
+  </li>
+  <li>
+    <p><a href="http://ouvens.github.io/">极限前端 http://ouvens.github.io/</a></p>
+
+    <p>Ouvenzhang, 前端工程师，对前端领域的技术知识具有较高的职业能力和探究精神。对响应式页面设计、工程构建组件化、mv*设计实现、前端优化、ES6开发体系等有深入的研究与项目实践。来自腾讯科技。</p>
+  </li>
+  <li>
+    <p><a href="http://www.dengzhr.com/">凳子_Joinery 邓智容  http://www.dengzhr.com/</a></p>
+  </li>
+  <li>
+    <p><a href="http://zhaoda.net/">赵达的个人网站 腾讯高级前端开发工程师</a></p>
+  </li>
+  <li>
+    <p><a href="http://djyde.github.io/">Randy</a></p>
+
+    <p>95年出生的全栈。卢涛南，英文名 Randy，用 djyde 这个ID混迹于网络。</p>
+  </li>
+  <li>
+    <p><a href="http://www.kancloud.cn/jsfront/month/82796">JS前端开发群月报 -豪情等人维护</a></p>
+  </li>
+</ul>
+
+<h2 id="comments">Comments</h2>
+
+<!-- 多说评论框 start -->
+<div class="ds-thread" data-thread-key="http://localhost:4001/collection/" data-title="Collections" data-url="http://localhost:4001/collection/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    var duoshuoQuery = {
+        short_name: "gzfdream"
+    };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+<!-- 多说公共JS代码 end -->
+
+:ET
