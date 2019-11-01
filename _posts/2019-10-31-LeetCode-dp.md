@@ -38,5 +38,37 @@ mathjax: true
 使用两层循环，当`nums[i]%nums[j]==0`(符合题目要求的整除)并且`dp[i]<=dp[j]`(如果`dp[i]>dp[j]`,即使把`dp[i]`放在`dp[j]`这个子集后面也不会是`dp[i]`变长)，`dp[i]=dp[j]++;`同时更新`last[i]=j;`
 #### 代码
 ```cpp
+vector<int> largestDivisibleSubset(vector<int>& nums) {
+	vector<int>res; // 结果
+	if(nums.size()==0)
+	    return res;
+        
+	vector<int> dp(nums.size(), 1);  // 状态数组
+	vector<int> last(nums.size(), -1);  // 存放符合条件的的nums[i]的前一个位置
+        
+	int max=INT_MIN;  // 最大长度
+	int end;  // 数组最后的位置
+	sort(nums.begin(), nums.end());  // 排序
+	for(int i=0; i<nums.size(); i++){
+	    for(int j=0; j<i; j++){
+	        if(nums[i]%nums[j]==0 && dp[i]<=dp[j]){ // 动态规划
+	            dp[i]=dp[j]+1;
+	            last[i]=j;
+	        }
+	    }
 
+	    if(dp[i]>max){
+	        max=dp[i];
+	        end=i;  // 更新最后的位置
+	    }
+	}
+    
+    // 输出
+	for(int i=0; i<max; i++){
+	    res.push_back(nums[end]);
+	    end = last[end];
+	}
+        
+	return res;
+}
 ```
