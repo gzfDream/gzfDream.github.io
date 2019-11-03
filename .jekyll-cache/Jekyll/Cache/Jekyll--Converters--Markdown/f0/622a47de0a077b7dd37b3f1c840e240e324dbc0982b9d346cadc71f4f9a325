@@ -1,0 +1,27 @@
+I"k<h2 id="自学-tensorflow20-1">自学 TensorFlow2.0 (1)</h2>
+
+<h3 id="问题解决">问题解决</h3>
+<blockquote>
+  <p>记录学习过程中遇到的问题</p>
+</blockquote>
+
+<h4 id="1tensor-切片">1、tensor 切片</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tf</span><span class="o">.</span><span class="nb">slice</span><span class="p">(</span>
+    <span class="n">input_</span><span class="p">,</span>
+    <span class="n">begin</span><span class="p">,</span>
+    <span class="n">size</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="bp">None</span>
+<span class="p">)</span>
+</code></pre></div></div>
+<blockquote>
+  <p>一个张量<code class="highlighter-rouge">input_</code>，从<code class="highlighter-rouge">begin</code>指定的位置开始提取一个大小为<code class="highlighter-rouge">size</code>的切片。
+注意：<code class="highlighter-rouge">tf.Tensor.getitem</code>是一个更符合<strong>python</strong>风格的切片方式，推荐使用<code class="highlighter-rouge">foo[3:7, :-2]</code>而不是<code class="highlighter-rouge">tf.slice(foo, [3, 0], [4, foo.get_shape()[1]-2])</code>.
+尤其是当tensor中有的维度是None时，此时<code class="highlighter-rouge">tf.slice</code>不能工作。</p>
+</blockquote>
+
+<h4 id="2tfreshape">2、tf.reshape()</h4>
+<blockquote>
+  <p><code class="highlighter-rouge">tf.reshape</code> takes a tensor of ints as the shape argument. If you are passing None, it doesn’t work. Maybe you want to replace <code class="highlighter-rouge">x.get_shape()[0]</code> with <code class="highlighter-rouge">tf.shape(x)[0]</code>
+当应用<code class="highlighter-rouge">tf.reshape()</code>的张量中有的维度是None时，请使用<code class="highlighter-rouge">tf.shape(x)[0]</code></p>
+</blockquote>
+:ET
