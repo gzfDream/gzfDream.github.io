@@ -1,0 +1,135 @@
+I"]<h2 id="1和相同的二元子数组">1、和相同的二元子数组</h2>
+<h3 id="题目描述">题目描述</h3>
+<p>在由若干 0 和 1  组成的数组 A 中，有多少个和为 S 的非空子数组。<a href="https://leetcode-cn.com/problems/binary-subarrays-with-sum">来源：力扣（LeetCode）</a></p>
+<h4 id="样例">样例</h4>
+<blockquote>
+  <p>输入：A = [1,0,1,0,1], S = 2</p>
+
+  <p>输出：4</p>
+
+  <p>解释：</p>
+
+  <p>如下面黑体所示，有 4 个满足题目要求的子数组：</p>
+
+  <p>[1,0,1,0,1]</p>
+
+  <p>[1,0,1,0,1]</p>
+
+  <p>[1,0,1,0,1]</p>
+
+  <p>[1,0,1,0,1]</p>
+</blockquote>
+
+<h4 id="思路参考">思路<a href="https://leetcode-cn.com/problems/binary-subarrays-with-sum/solution/c-he-xiang-tong-de-er-yuan-zi-shu-zu-by-sologala/">参考</a>：</h4>
+<ul>
+  <li>当S=0时，只需要计算全为0的连续子数组。</li>
+  <li>当S!=0时，对于一个和等于S的子数组，可以求出第一个1 左边的0的个数，以及最后一个 1 的右边的 0 的个数 然后它们相乘 就是的当前这两个1 构成 s的所有总类。</li>
+</ul>
+
+<details>
+    <summary>阅读全部内容</summary>
+    <pre><code>
+
+int numSubarraysWithSum(vector<int>&amp; A, int S) {
+    int result=0;
+    if(S==0){
+        int len=0;
+        for(int i=0; i&lt;A.size(); i++){
+            if(A[i]==0){
+                len++;
+            }else{
+                result+=(((len+1)*len)/2);
+                len=0;
+            }
+        }
+        result+=(((len+1)*len)/2);
+    }
+    else{
+        int start=0;
+        int end=0;
+        int sum=0;
+        for(int i=0; i&lt;A.size(); i++){
+            if(A[i]==1){
+                start=i;
+                end=start;
+                sum=0;
+                bool flag=false;
+                for(; end&lt;A.size(); end++){
+                    sum+=A[end];
+                    if(sum==S){
+                        flag=true;
+                        break;
+                    }
+                }
+                if(flag){
+                    int left=1;
+                    int right=1;
+                    for(int j=start-1; j&gt;=0; j--){
+                        if(A[j]==0)
+                            left++;
+                        else
+                            break;
+                    }
+                    for(int j=end+1; j&lt;A.size(); j++){
+                        if(A[j]==0)
+                            right++;
+                        else
+                            break;
+                    }
+                    result+=left*right;
+                }
+            }
+        }
+    }
+    
+    return result;
+}
+    
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+
+<p>
+</p>&gt;
+
+
+## 2、计算各个位数不同的数字个数
+### 题目描述
+给定一个非负整数 n，计算各位数字都不同的数字 x 的个数，其中 0 ≤ x &lt; 10n 。[来源：力扣（LeetCode）](https://leetcode-cn.com/problems/count-numbers-with-unique-digits/)
+#### 样例
+&gt; 输入: 2
+&gt;
+&gt; 输出: 91 
+&gt;
+&gt; 解释: 答案应为除去 11,22,33,44,55,66,77,88,99 外，在 [0,100) 区间内的所有数字。
+
+#### 思路：
+- 0在首位时，也就是n-1位的情况
+- 0不在首位的时候就是9*A(9, n-1)
+
+<details>
+<summary>code</summary>
+<pre>
+
+	int helper(int n){
+        if(n==2)
+            return 81;
+        return (11-n)*helper(n-1);
+    }
+    int countNumbersWithUniqueDigits(int n) {
+        if(n==0)
+            return 1;
+        if(n==1)
+            return 10;
+        if(n&gt;10)
+            n=10;
+        int res=10;
+        for(int i=2; i&lt;=n; i++){
+            res+=helper(i);
+        }
+        return res;
+    }
+    
+</pre>
+</details>
+</int></code></pre></details>
+:ET
