@@ -1,0 +1,53 @@
+I"�<ul id="markdown-toc">
+  <li><a href="#关于我" id="markdown-toc-关于我">关于我</a></li>
+  <li><a href="#联系我" id="markdown-toc-联系我">联系我</a></li>
+  <li><a href="#关于本站" id="markdown-toc-关于本站">关于本站</a></li>
+  <li><a href="#comments" id="markdown-toc-comments">Comments</a></li>
+</ul>
+
+<h2 id="关于我">关于我</h2>
+
+<iframe src="https://githubbadge.appspot.com/gzfDream?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameborder="0"></iframe>
+
+<p>山东大学渣硕</p>
+
+<h2 id="联系我">联系我</h2>
+
+<ul>
+  <li><a href="https://github.com/gzfDream">GitHub</a></li>
+  <li><a href="https://www.zhihu.com/people/dream-56-96/activities">知乎</a></li>
+  <li>email：2559609735@qq.com</li>
+</ul>
+
+<h2 id="关于本站">关于本站</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gzf自己的学习积累
+</code></pre></div></div>
+
+<h2 id="comments">Comments</h2>
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function() {
+        this.page.url = 'http://localhost:4001/about/'; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://localhost:4001/about/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document,
+            s = d.createElement('script');
+
+        s.src = '//gzfdream.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+:ET
