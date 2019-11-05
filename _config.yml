@@ -39,7 +39,7 @@ baidu_tongji_id: d4f3ca1811a7fae3f71b9ed49487bd22
 google_analytics_id:  # google 分析追踪id
 
 # Build settings
-markdown: redcarpet # kramdown
+markdown: kramdown
 
 kramdown:
   input: GFM

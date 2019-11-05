@@ -1,0 +1,187 @@
+I"9<h2 id="例题1-赋值运算函数">例题1 赋值运算函数</h2>
+<p><strong>题目描述</strong></p>
+<blockquote>
+  <p>如下是<code class="highlighter-rouge">CMyString</code>的声明，请为其添加赋值运算函数。</p>
+  <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Class</span> <span class="n">CMyString</span><span class="p">{</span>
+<span class="nl">public:</span>
+	<span class="n">CMyString</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">pData</span><span class="o">=</span><span class="nb">NULL</span><span class="p">);</span>
+	<span class="n">CMyString</span><span class="p">(</span><span class="k">const</span> <span class="n">CMyString</span><span class="o">&amp;</span> <span class="n">m</span><span class="p">);</span>
+	<span class="o">~</span><span class="n">CMyString</span><span class="p">();</span>
+<span class="nl">private:</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">m_pData</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<p><strong>思路</strong></p>
+<ul>
+  <li>返回值为该类型的引用</li>
+  <li>出入的参数类型声明为常量引用</li>
+  <li>释放实例自身已有的内存</li>
+  <li>检查传入的参数和当前的实例是不是同一个实例</li>
+</ul>
+
+<details>
+  <summary>code</summary>
+  <pre><code>
+  	// 解法1
+  	CMyString&amp; CMyString::operator=(const CMyString&amp; str){
+		if(&amp;str == this)
+			return *this;
+		else{
+			delete []m_pData;
+			m_pData = NULL;
+
+			m_pData = new char[strlen(str.m_pData)+1];
+			strcpy(m_pData, str.m_pData);
+
+			return *this;
+		}
+  	}
+  </code></pre>
+
+  <pre><code>
+    // 解法2 分配内存前先delete释放m_pData，如果内存不足，会导致new char抛出异常。采用如下解决办法。 
+  	CMyString&amp; CMyString::operator=(const CMyString&amp; str){
+		if(&amp;str == this)
+			return *this;
+		else{
+			CMyString str_tmp(str);
+
+			char *tmp=str_tmp.m_pData;
+			str_tmp.m_pData=m_pData;
+			m_pData = tmp;
+
+			return *this;
+		}
+  	}
+  </code></pre>
+</details>
+
+<h2 id="例题2-单例模式">例题2 单例模式</h2>
+<p><strong>题目描述</strong></p>
+<blockquote>
+  <p>设计一个类，只能生成该类的一个实例。</p>
+</blockquote>
+
+<p><strong>思路</strong></p>
+<blockquote>
+  <p>单例模式是为确保一个类只有一个实例，并为整个系统提供一个全局访问点的一种模式方法。</p>
+
+  <p>单例特点：</p>
+
+  <p>1.在任何情况下，单例类永远只有一个实例存在。</p>
+
+  <p>2.单例需要有能力为整个系统提供这一唯一实例。</p>
+
+  <p>请<a href="https://zhuanlan.zhihu.com/p/62014096">参考</a></p>
+</blockquote>
+
+<details>
+  <summary>code</summary>
+  <pre><code> 
+    class Singleton{
+    private:
+    	Singleton(){}
+    	static Singleton* instance;
+    public:
+    	static Singleton* get_instance(){
+    		if(instance==NULL)
+    			instance = new Singleton();
+    		return instance;
+    	}
+ 	}
+
+ 	Singleton* Singleton::_instance = NULL;
+  </code></pre>
+</details>
+
+<h2 id="例题31-数组中重复的数字">例题3.1 数组中重复的数字</h2>
+<p><strong>题目描述</strong></p>
+<blockquote>
+  <p>在长度为n的数组中，所有的数字都在0~n-1之间。找出数组中任意重复的数字。</p>
+</blockquote>
+
+<p><strong>示例</strong></p>
+<blockquote>
+  <p>{2,3,1,0,2,5,3}</p>
+
+  <p>输出：2或者3</p>
+</blockquote>
+
+<p><strong>思路</strong></p>
+<blockquote>
+  <ol>
+    <li>排序或者使用哈希表</li>
+    <li>扫描数组，将位置i的数字m与位置m处的数字比较，若相等则重复。若不相等，则交换两者的位置。重复此过程。</li>
+  </ol>
+</blockquote>
+
+<details>
+  <summary>code</summary>
+  <pre><code> 
+    bool duplicate(const std::vector<int>&amp; v, int* dup){
+		if(v.size()==0)
+			return false;
+
+		for(int i=0; i&lt;v.size(); i++){
+			if(v[i]&lt;0 || v[i]&gt;v.size())
+				return false;
+		}
+
+		for(int i=0; i&lt;v.size(); i++){
+			while(v[i]!=i){
+				if(v[i]==v[v[i]]){
+					*dup = v[i];
+					return true;
+				}else{
+					int tmp=v[v[i]];
+					v[v[i]]=v[i];
+					v[i]=tmp;
+				}
+			}
+		}
+		return false;
+	}
+  &lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+
+
+## 例题1 赋值运算函数
+**题目描述**
+&gt; 
+
+**示例**
+&gt;
+
+**思路**
+&gt; 
+
+<details>
+  <summary>折叠代码块</summary>
+  <pre><code> 
+     System.out.println("虽然可以折叠代码块");
+     System.out.println("但是代码无法高亮");
+  </code></pre>
+</details>
+
+
+## 例题1 赋值运算函数
+**题目描述**
+&gt; 
+
+**示例**
+&gt;
+
+**思路**
+&gt; 
+
+<details>
+  <summary>折叠代码块</summary>
+  <pre><code> 
+     System.out.println("虽然可以折叠代码块");
+     System.out.println("但是代码无法高亮");
+  </code></pre>
+</details>
+</int></code></pre></details>
+:ET

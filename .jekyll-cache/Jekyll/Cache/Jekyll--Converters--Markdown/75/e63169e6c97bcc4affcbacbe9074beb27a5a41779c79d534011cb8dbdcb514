@@ -1,0 +1,232 @@
+I"�?<h2 id="例题1-赋值运算函数">例题1 赋值运算函数</h2>
+<p><strong>题目描述</strong></p>
+<blockquote>
+  <p>如下是<code class="highlighter-rouge">CMyString</code>的声明，请为其添加赋值运算函数。</p>
+</blockquote>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Class</span> <span class="n">CMyString</span><span class="p">{</span>
+<span class="nl">public:</span>
+	<span class="n">CMyString</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">pData</span><span class="o">=</span><span class="nb">NULL</span><span class="p">);</span>
+	<span class="n">CMyString</span><span class="p">(</span><span class="k">const</span> <span class="n">CMyString</span><span class="o">&amp;</span> <span class="n">m</span><span class="p">);</span>
+	<span class="o">~</span><span class="n">CMyString</span><span class="p">();</span>
+<span class="nl">private:</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">m_pData</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>思路</strong></p>
+<ul>
+  <li>返回值为该类型的引用</li>
+  <li>出入的参数类型声明为常量引用</li>
+  <li>释放实例自身已有的内存</li>
+  <li>检查传入的参数和当前的实例是不是同一个实例</li>
+</ul>
+
+<details>
+  <summary>code</summary>
+  <pre><code>
+  	// 解法1
+  	CMyString&amp; CMyString::operator=(const CMyString&amp; str){
+		if(&amp;str == this)
+			return *this;
+		else{
+			delete []m_pData;
+			m_pData = NULL;
+
+			m_pData = new char[strlen(str.m_pData)+1];
+			strcpy(m_pData, str.m_pData);
+
+			return *this;
+		}
+  	}
+  </code></pre>
+
+  <pre><code>
+    // 解法2 分配内存前先delete释放m_pData，如果内存不足，会导致new char抛出异常。采用如下解决办法。 
+  	CMyString&amp; CMyString::operator=(const CMyString&amp; str){
+		if(&amp;str == this)
+			return *this;
+		else{
+			CMyString str_tmp(str);
+
+			char *tmp=str_tmp.m_pData;
+			str_tmp.m_pData=m_pData;
+			m_pData = tmp;
+
+			return *this;
+		}
+  	}
+  </code></pre>
+</details>
+
+<h2 id="例题2-单例模式">例题2 单例模式</h2>
+<p><strong>题目描述</strong></p>
+<blockquote>
+  <p>设计一个类，只能生成该类的一个实例。</p>
+</blockquote>
+
+<p><strong>思路</strong></p>
+<blockquote>
+  <p>单例模式是为确保一个类只有一个实例，并为整个系统提供一个全局访问点的一种模式方法。</p>
+
+  <p>单例特点：</p>
+
+  <p>1.在任何情况下，单例类永远只有一个实例存在。</p>
+
+  <p>2.单例需要有能力为整个系统提供这一唯一实例。</p>
+
+  <p>请<a href="https://zhuanlan.zhihu.com/p/62014096">参考</a></p>
+</blockquote>
+
+<details>
+  <summary>code</summary>
+  <pre><code> 
+    class Singleton{
+    private:
+    	Singleton(){}
+    	static Singleton* instance;
+    public:
+    	static Singleton* get_instance(){
+    		if(instance==NULL)
+    			instance = new Singleton();
+    		return instance;
+    	}
+ 	}
+ 	//Singleton* Singleton::_instance = NULL;
+  </code></pre>
+</details>
+
+<h2 id="例题31-数组中重复的数字">例题3.1 数组中重复的数字</h2>
+<p><strong>题目描述</strong></p>
+<blockquote>
+  <p>在长度为n的数组中，所有的数字都在0~n-1之间。找出数组中任意重复的数字。</p>
+</blockquote>
+
+<p><strong>示例</strong></p>
+<blockquote>
+  <p>{2,3,1,0,2,5,3}</p>
+
+  <p>输出：2或者3</p>
+</blockquote>
+
+<p><strong>思路</strong></p>
+<blockquote>
+  <ol>
+    <li>排序或者使用哈希表</li>
+    <li>扫描数组，将位置i的数字m与位置m处的数字比较，若相等则重复。若不相等，则交换两者的位置。重复此过程。</li>
+  </ol>
+</blockquote>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="kt">bool</span> <span class="nf">duplicate</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">dup</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+          <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+          <span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">0</span> <span class="o">||</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+          <span class="k">while</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">i</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]]){</span>
+              <span class="o">*</span><span class="n">dup</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+              <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+              <span class="kt">int</span> <span class="n">tmp</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]];</span>
+              <span class="n">v</span><span class="p">[</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">=</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+              <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">tmp</span><span class="p">;</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+      <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="例题32-数组中重复的数字">例题3.2 数组中重复的数字</h2>
+<p><strong>题目描述</strong></p>
+<blockquote>
+  <p>在长度为n+1的数组中，所有的数字都在1~n之间。找出数组中任意重复的数字。</p>
+</blockquote>
+
+<p><strong>示例</strong></p>
+<blockquote>
+  <p>{2,3,1,4,2,5,3}</p>
+
+  <p>输出：2或者3</p>
+</blockquote>
+
+<p><strong>思路</strong></p>
+<blockquote>
+  <ul>
+    <li>创建一个n+1的数组，将原数组的数字复制到新数组对应下标的位置。空间复杂度O(n)，时间复杂度O(n)</li>
+    <li>类似于二分的思想，取1~n的中间值m，遍历数组统计落在1~m中的数字的个数，如果大于m，则这一半里一定有重复的数字。时间复杂度O(nlogn)，空间复杂度O(1)</li>
+  </ul>
+</blockquote>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kt">int</span> <span class="nf">duplicate</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">dup</span><span class="p">){</span>
+      <span class="n">itn</span> <span class="n">n</span><span class="o">=</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+      <span class="kt">int</span> <span class="n">left</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+      <span class="kt">int</span> <span class="n">right</span><span class="o">=</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+      <span class="k">while</span><span class="p">(</span><span class="n">left</span><span class="o">&lt;=</span><span class="n">right</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">m</span><span class="o">=</span><span class="p">((</span><span class="n">right</span><span class="o">-</span><span class="n">left</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">left</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">tmp</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+          <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">)</span>
+            <span class="n">tmp</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">left</span><span class="o">==</span><span class="n">right</span><span class="p">){</span>
+          <span class="k">if</span><span class="p">(</span><span class="n">tmp</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">left</span><span class="p">;</span>
+          <span class="k">else</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">tmp</span><span class="o">&gt;</span><span class="n">m</span><span class="o">-</span><span class="n">left</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+          <span class="n">right</span><span class="o">=</span><span class="n">m</span><span class="p">;</span>
+        <span class="k">else</span>
+          <span class="n">left</span><span class="o">=</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="例题4-二维数组中查找">例题4 二维数组中查找</h2>
+<p><strong>题目描述</strong></p>
+<blockquote>
+  <p>一个m x n 矩阵 matrix，该矩阵具有以下特性：</p>
+
+  <p>每行的元素从左到右升序排列。</p>
+
+  <p>每列的元素从上到下升序排列。</p>
+
+  <p>编写一个高效的算法，查找其中的一个目标值 target。</p>
+</blockquote>
+
+<p><strong>示例</strong></p>
+<blockquote>
+  <p>[
+  [1,   4,  7, 11, 15],
+  [2,   5,  8, 12, 19],
+  [3,   6,  9, 16, 22],
+  [10, 13, 14, 17, 24],
+  [18, 21, 23, 26, 30]
+]</p>
+</blockquote>
+
+<p><strong>思路</strong></p>
+<blockquote>
+  <p>从右上角数字m开始，target如果大于m，则去掉这一行; 如果target小于m，则去掉这一列; 相等则结束。</p>
+  <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kt">bool</span> <span class="nf">searchMatrix</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;&amp;</span> <span class="n">matrix</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">matrix</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">size</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">m</span><span class="o">&lt;</span><span class="n">matrix</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">&amp;&amp;</span><span class="n">n</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">n</span><span class="p">]</span><span class="o">==</span><span class="n">target</span><span class="p">)</span><span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">n</span><span class="p">]</span><span class="o">&gt;</span><span class="n">target</span><span class="p">)</span> <span class="n">n</span><span class="o">--</span><span class="p">;</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">n</span><span class="p">]</span><span class="o">&lt;</span><span class="n">target</span><span class="p">)</span> <span class="n">m</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div>  </div>
+</blockquote>
+:ET

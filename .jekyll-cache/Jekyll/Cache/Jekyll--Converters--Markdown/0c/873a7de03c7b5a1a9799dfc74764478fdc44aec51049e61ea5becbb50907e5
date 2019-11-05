@@ -1,0 +1,128 @@
+I"�%<h2 id="1-划分为k个相等的子集">1、 划分为k个相等的子集</h2>
+<h3 id="题目描述">题目描述</h3>
+<p>给定一个整数数组  nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。<a href="https://leetcode-cn.com/problems/partition-to-k-equal-sum-subsets">来源：力扣（LeetCode）</a></p>
+<h4 id="样例">样例</h4>
+<blockquote>
+  <p>输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4</p>
+
+  <p>输出： True</p>
+
+  <p>说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。</p>
+
+</blockquote>
+
+<h4 id="思路">思路：</h4>
+<ul>
+  <li>递归，回溯</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="kt">bool</span> <span class="nf">helper</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="n">sums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">){</span>
+		<span class="c1">// 输入 原数组，原数组中开始搜索的位置，每个子数组的和，目标和</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">start</span><span class="o">&gt;=</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">k</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">sums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">target</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="p">}</span>   
+            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">sums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">start</span><span class="p">]</span><span class="o">&gt;</span><span class="n">target</span><span class="p">)</span>
+                <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">start</span><span class="p">]</span><span class="o">+</span><span class="n">sums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">target</span><span class="p">){</span>
+                <span class="n">sums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+=</span><span class="n">nums</span><span class="p">[</span><span class="n">start</span><span class="p">];</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">helper</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">start</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">sums</span><span class="p">,</span> <span class="n">target</span><span class="p">))</span>
+                    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+                <span class="n">sums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">-=</span><span class="n">nums</span><span class="p">[</span><span class="n">start</span><span class="p">];</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="k">continue</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">bool</span> <span class="nf">canPartitionKSubsets</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>  <span class="c1">// 求和</span>
+            <span class="n">sum</span><span class="o">+=</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">sum</span><span class="o">%</span><span class="n">k</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// 如果不能整除，一定不成立</span>
+            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="k">else</span>  <span class="c1">// 如果可以整除，计算每个子数组的目标和</span>
+            <span class="n">sum</span><span class="o">/=</span><span class="n">k</span><span class="p">;</span>
+        
+        <span class="n">sort</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">rbegin</span><span class="p">(),</span> <span class="n">nums</span><span class="p">.</span><span class="n">rend</span><span class="p">());</span>  <span class="c1">// 从大到小排序</span>
+        
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">sums</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>  <span class="c1">// 存放k个子数组的和</span>
+        <span class="k">return</span> <span class="n">helper</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sums</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="1-n叉树的层序遍历">1 N叉树的层序遍历</h2>
+<p><strong>题目描述</strong></p>
+<blockquote>
+  <p>给定一个 N 叉树，返回其节点值的层序遍历。 (即从左到右，逐层遍历)。<a href="https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/">来源：力扣(LeetCode)</a>
+```cpp
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    vector&lt;Node*&gt; children;</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Node() {}
+
+Node(int _val, vector&lt;Node*&gt; _children) {
+    val = _val;
+    children = _children;
+} }; ```
+</code></pre></div></div>
+
+<p><strong>示例</strong></p>
+<blockquote>
+
+</blockquote>
+
+<p><strong>思路</strong></p>
+<blockquote>
+  <ul>
+    <li>
+      <p>使用queue迭代</p>
+    </li>
+    <li>
+      <p>递归bfs</p>
+    </li>
+  </ul>
+</blockquote>
+
+<details>
+    <summary>折叠代码块</summary>
+    <pre><code> 
+        vector&lt;vector<int> &gt; levelOrder(Node* root) {
+            vector&lt;vector<int>&gt; result;    
+            if(root==NULL){
+                return result;
+            }
+            queue&lt;Node*&gt;que;
+            que.push(root);
+            while(!que.empty()){
+                vector<int> vec;
+                queue&lt;Node*&gt;q_tmp;
+                while(!que.empty()){
+                    Node* p = que.front();
+                    que.pop();
+                    vec.push_back(p-&gt;val);
+                    for(int i=0; i<p->children.size(); i++)
+                        q_tmp.push(p-&gt;children[i]);
+                }
+                result.push_back(vec);
+                que=q_tmp;
+            }
+            return result;
+        }
+
+    &lt;/code&gt;&lt;/pre&gt;
+&lt;/details&gt;
+</p-></int></int></int></code></pre></details>
+:ET
